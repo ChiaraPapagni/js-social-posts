@@ -1,0 +1,87 @@
+/* 
+Creare una pagina che elenchi una lista di post socials a partire da un array di oggetti.
+Gli attributi minimi del modello di un post: 
+    id 
+    contenuto
+    immagine
+    autore 
+        nome, 
+        avatar
+    numero di likes
+    data creazione
+Un secondo array conterrà solo gli id dei posts a cui abbiamo dato like. */
+
+const posts =
+    [
+        {
+            id: 0,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aliquid distinctio, a earum recusandae animi voluptatem saepe impedit quas atque aut, ullam at officia. Totam natus quod illum incidunt sint.',
+            image: 'https://picsum.photos/600/400',
+            author:
+            {
+                authorName: 'Phil Mangione',
+                authorImage: 'https://picsum.photos/60/60',
+            }
+            ,
+            like: 80,
+            date: new Date().toLocaleDateString(),
+        },
+        {
+            id: 1,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum magnam facilis, ut expedita repudiandae id sed sequi aperiam unde excepturi ipsa laudantium saepe. Assumenda sequi odit natus dolorum, nam dignissimos.',
+            image: 'https://picsum.photos/600/400',
+            author:
+            {
+                authorName: 'Sofia Perlari',
+                authorImage: 'https://picsum.photos/60/60',
+            }
+            ,
+            like: 17,
+            date: new Date('2021-10-22').toLocaleDateString(),
+        },
+        {
+            id: 2,
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque deserunt eius odio ipsum sit ut facere totam quidem consequatur dicta non sint quae dolor, sed iusto sunt laudantium veritatis minus.',
+            image: 'https://picsum.photos/600/400',
+            author:
+            {
+                authorName: 'Chiara Ferragni',
+                authorImage: 'https://picsum.photos/60/60',
+            }
+            ,
+            like: 1589,
+            date: new Date('2021-10-21').toLocaleDateString(),
+        },
+    ];
+console.log(posts);
+
+renderPosts(posts);
+
+function renderPost(posts) {
+    return `<div class="post">
+    <div class="author">
+        <img src="${posts.author.authorImage}" alt="${posts.author.authorName}">
+        <div class="name">
+            ${posts.author.authorName}
+            <div class="date">${posts.date}</div>
+        </div>
+    </div>
+    <div class="text">${posts.text}</div>
+    <img src="${posts.image}" class="img-fluid">
+    <div class="like">
+        <div>
+            <i class="fas fa-thumbs-up"></i>
+            Mi piace
+            </div>
+        <div>
+            Piace a <span>${posts.like}</span> persone
+        </div>
+    </div></div>`
+}
+
+function renderPosts(posts) {
+    for (let i = 0; i < posts.length; i++) {
+        const post = posts[i];
+        document.querySelector('.container').insertAdjacentHTML('beforeend', renderPost(post));
+    }
+}

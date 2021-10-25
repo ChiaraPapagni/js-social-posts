@@ -27,6 +27,8 @@ Main
 .container {
     width: min-content;
     margin: auto;
+    margin-bottom: 2rem;
+
 }
 
 .post {
