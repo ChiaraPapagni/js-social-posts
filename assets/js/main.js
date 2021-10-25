@@ -94,9 +94,6 @@ function renderPosts(posts) {
         if (posts[i].author.authorImage == '') {
             let nameInitials = posts[i].author.authorName.match(/\b(\w)/g).join('');
             document.getElementsByClassName('author_image')[i].innerHTML = nameInitials;
-            console.log(document.getElementsByClassName('author_image')[i]);
-
         }
-
     }
 }
