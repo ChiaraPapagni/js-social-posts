@@ -84,10 +84,8 @@ function renderPosts(posts) {
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
         document.querySelector('.container').insertAdjacentHTML('beforeend', renderPost(post));
-        if (likedPosts[i] == post.id) {
-            console.log('ciao');
-            document.getElementsByClassName('like_btn').classList.add('dark_blue');
+        if (likedPosts[i] == posts[i].id) {
+            document.getElementsByClassName('like_btn')[i].style.color = '#102F45';
         }
     }
 }
-

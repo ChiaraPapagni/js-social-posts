@@ -21,10 +21,6 @@ h1 {
     margin: 2rem;
 }
 
-.dark_blue {
-    color: #102F45;
-}
-
 /*****************
 Main 
 *****************/
@@ -77,9 +73,10 @@ Main
     padding-bottom: 0.5rem;
 }
 
-.like :first-child {
+.like .like_btn {
     color: #404040;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .like span {
