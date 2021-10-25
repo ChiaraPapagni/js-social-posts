@@ -33,7 +33,7 @@ const posts =
             author:
             {
                 authorName: 'Sofia Perlari',
-                authorImage: 'https://unsplash.it/60/60?image=',
+                authorImage: '',
             }
             ,
             like: 17,
@@ -61,7 +61,9 @@ renderPosts(posts);
 function renderPost(posts) {
     return `<div class="post">
     <div class="author">
-        <img src="${posts.author.authorImage}${posts.id}" alt="${posts.author.authorName}">
+        <div class="author_image">
+            <img src="${posts.author.authorImage}${posts.id}" alt="${posts.author.authorName}">
+        </div>
         <div class="name">
             ${posts.author.authorName}
             <div class="date">${posts.date}</div>
@@ -84,8 +86,17 @@ function renderPosts(posts) {
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
         document.querySelector('.container').insertAdjacentHTML('beforeend', renderPost(post));
+
         if (likedPosts[i] == posts[i].id) {
-            document.getElementsByClassName('like_btn')[i].style.color = '#102F45';
+            document.getElementsByClassName('like_btn')[i].style.color = '#61D2A4';
         }
+
+        if (posts[i].author.authorImage == '') {
+            let nameInitials = posts[i].author.authorName.match(/\b(\w)/g).join('');
+            document.getElementsByClassName('author_image')[i].innerHTML = nameInitials;
+            console.log(document.getElementsByClassName('author_image')[i]);
+
+        }
+
     }
 }
