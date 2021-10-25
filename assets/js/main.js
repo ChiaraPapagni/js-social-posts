@@ -14,39 +14,39 @@ Un secondo array conterrà solo gli id dei posts a cui abbiamo dato like. */
 const posts =
     [
         {
-            id: 0,
+            id: 1012,
             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aliquid distinctio, a earum recusandae animi voluptatem saepe impedit quas atque aut, ullam at officia. Totam natus quod illum incidunt sint.',
             image: 'https://picsum.photos/600/400',
             author:
             {
                 authorName: 'Phil Mangione',
-                authorImage: 'https://picsum.photos/60/60',
+                authorImage: 'https://unsplash.it/60/60?image=',
             }
             ,
             like: 80,
             date: new Date().toLocaleDateString(),
         },
         {
-            id: 1,
+            id: 1005,
             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum magnam facilis, ut expedita repudiandae id sed sequi aperiam unde excepturi ipsa laudantium saepe. Assumenda sequi odit natus dolorum, nam dignissimos.',
             image: 'https://picsum.photos/600/400',
             author:
             {
                 authorName: 'Sofia Perlari',
-                authorImage: 'https://picsum.photos/60/60',
+                authorImage: 'https://unsplash.it/60/60?image=',
             }
             ,
             like: 17,
             date: new Date('2021-10-22').toLocaleDateString(),
         },
         {
-            id: 2,
+            id: 1025,
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque deserunt eius odio ipsum sit ut facere totam quidem consequatur dicta non sint quae dolor, sed iusto sunt laudantium veritatis minus.',
             image: 'https://picsum.photos/600/400',
             author:
             {
                 authorName: 'Chiara Ferragni',
-                authorImage: 'https://picsum.photos/60/60',
+                authorImage: 'https://unsplash.it/60/60?image=',
             }
             ,
             like: 1589,
@@ -60,7 +60,7 @@ renderPosts(posts);
 function renderPost(posts) {
     return `<div class="post">
     <div class="author">
-        <img src="${posts.author.authorImage}" alt="${posts.author.authorName}">
+        <img src="${posts.author.authorImage}${posts.id}" alt="${posts.author.authorName}">
         <div class="name">
             ${posts.author.authorName}
             <div class="date">${posts.date}</div>
