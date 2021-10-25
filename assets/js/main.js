@@ -53,7 +53,8 @@ const posts =
             date: new Date('2021-10-21').toLocaleDateString(),
         },
     ];
-console.log(posts);
+
+const likedPosts = [1012, 1005];
 
 renderPosts(posts);
 
@@ -69,7 +70,7 @@ function renderPost(posts) {
     <div class="text">${posts.text}</div>
     <img src="${posts.image}" class="img-fluid">
     <div class="like">
-        <div>
+        <div class="like_btn">
             <i class="fas fa-thumbs-up"></i>
             Mi piace
             </div>
@@ -83,5 +84,10 @@ function renderPosts(posts) {
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
         document.querySelector('.container').insertAdjacentHTML('beforeend', renderPost(post));
+        if (likedPosts[i] == post.id) {
+            console.log('ciao');
+            document.getElementsByClassName('like_btn').classList.add('dark_blue');
+        }
     }
 }
+
