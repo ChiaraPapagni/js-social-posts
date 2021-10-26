@@ -81,14 +81,19 @@ Main
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 1.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.7rem;
 }
 
 .like .like_btn {
+    padding: 0.7rem 1rem;
     color: #404040;
     font-weight: bold;
     cursor: pointer;
+}
+
+.like .like_btn:hover {
+    background-color: #DFDFDF;
+    border-radius: 5px;
 }
 
 .like span {
